@@ -1,0 +1,8 @@
+/vendor/
+.phpunit.result.cache
+/build/
+.idea/
+.vscode/
+*.swp
+.env
+.env.local

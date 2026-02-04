@@ -1,0 +1,36 @@
+<?php
+
+namespace PlentyOne\Api\Requests\Item;
+
+use DateTime;
+use Saloon\Contracts\Body\HasBody;
+use Saloon\Enums\Method;
+use Saloon\Http\Request;
+use Saloon\Traits\Body\HasJsonBody;
+
+/**
+ * Activate a client (store)
+ *
+ * Activates a client (store) for a sales price. The ID of the sales price must be specified.
+ */
+class ActivateClientStore extends Request implements HasBody
+{
+	use HasJsonBody;
+
+	protected Method $method = Method::POST;
+
+
+	public function resolveEndpoint(): string
+	{
+		return "/rest/items/sales_prices/{$this->id}/online_stores";
+	}
+
+
+	/**
+	 * @param int $id
+	 */
+	public function __construct(
+		protected int $id,
+	) {
+	}
+}

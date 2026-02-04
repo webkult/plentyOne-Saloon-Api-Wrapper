@@ -1,0 +1,66 @@
+<?php
+
+namespace PlentyOne\Api\Dto;
+
+use Spatie\LaravelData\Data as SpatieData;
+
+class Item extends SpatieData
+{
+	public function __construct(
+		public ?int $id = null,
+		public ?int $position = null,
+		public ?string $itemType = null,
+		public ?int $stockType = null,
+		public ?int $storeSpecial = null,
+		public ?int $ownerId = null,
+		public ?int $manufacturerId = null,
+		public ?int $producingCountryId = null,
+		public ?int $mainVariationId = null,
+		public ?int $revenueAccount = null,
+		public ?int $couponRestriction = null,
+		public ?int $condition = null,
+		public ?int $conditionApi = null,
+		public ?string $createdAt = null,
+		public ?string $updatedAt = null,
+		public ?bool $isSubscribable = null,
+		public ?bool $isSerialNumber = null,
+		public ?bool $isShippingPackage = null,
+		public ?int $amazonFbaPlatform = null,
+		public ?bool $isShippableByAmazon = null,
+		public ?int $amazonProductType = null,
+		public ?string $amazonFedas = null,
+		public ?int $ebayPresetId = null,
+		public ?int $ebayCategory = null,
+		public ?int $ebayCategory2 = null,
+		public ?int $ebayStoreCategory = null,
+		public ?int $ebayStoreCategory2 = null,
+		public ?int $rakutenCategoryId = null,
+		public ?int $flagOne = null,
+		public ?int $flagTwo = null,
+		public ?int $ageRestriction = null,
+		public ?int $feedback = null,
+		public ?string $free1 = null,
+		public ?string $free2 = null,
+		public ?string $free3 = null,
+		public ?string $free4 = null,
+		public ?string $free5 = null,
+		public ?string $free6 = null,
+		public ?string $free7 = null,
+		public ?string $free8 = null,
+		public ?string $free9 = null,
+		public ?string $free10 = null,
+		public ?string $free11 = null,
+		public ?string $free12 = null,
+		public ?string $free13 = null,
+		public ?string $free14 = null,
+		public ?string $free15 = null,
+		public ?string $free16 = null,
+		public ?string $free17 = null,
+		public ?string $free18 = null,
+		public ?string $free19 = null,
+		public ?string $free20 = null,
+		public int|float|null $maximumOrderQuantity = null,
+		public ?string $customsTariffNumber = null,
+	) {
+	}
+}

@@ -1,0 +1,17 @@
+<?php
+
+namespace PlentyOne\Api\Dto;
+
+use Spatie\LaravelData\Data as SpatieData;
+
+class PropertyAmazon extends SpatieData
+{
+	public function __construct(
+		public ?int $id = null,
+		public ?int $propertyId = null,
+		public ?string $platform = null,
+		public ?string $category = null,
+		public ?string $field = null,
+	) {
+	}
+}
