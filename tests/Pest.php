@@ -6,6 +6,7 @@ use PlentyOne\Api\PlentyOne;
 use PlentyOne\Api\Tests\Helpers\OpenApiExamples;
 
 uses()->in('Feature', 'Unit');
+uses(\PlentyOne\Api\Tests\Laravel\TestCase::class)->in('Laravel');
 
 beforeEach(function (): void {
     if (function_exists('Saloon\MockConfig::reset')) {

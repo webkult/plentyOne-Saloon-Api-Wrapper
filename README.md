@@ -1,5 +1,8 @@
 # PlentyOne Saloon API
 
+[![Tests](https://github.com/webkult/plentyone-saloon-api/actions/workflows/tests.yml/badge.svg)](https://github.com/webkult/plentyone-saloon-api/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/webkult/plentyone-saloon-api/graph/badge.svg)](https://codecov.io/gh/webkult/plentyone-saloon-api)
+
 PHP-SDK für die plentymarkets/plentyOne REST-API, gebaut mit [Saloon](https://saloon.dev).
 
 - **Vendor:** Webkult  
@@ -112,3 +115,22 @@ Die Spec liegt unter `openapi/plentymarkets-openapi.json` (Quelle: [plentymarket
 ```bash
 composer test
 ```
+
+Mit Coverage (lokal mit Xdebug, PHP 8.4: `pecl install xdebug`):
+
+```bash
+composer run test:coverage
+```
+
+Dabei wird `XDEBUG_MODE=coverage` gesetzt; der Report landet in der Konsole und unter `build/coverage/clover.xml`.
+
+Die Coverage bezieht sich nur auf den **von uns gepflegten Code** (Connector `PlentyOne`, Laravel-Integration `PlentyOneLaravel`, `PlentyOneServiceProvider`). Generierter Code (Requests, Dto, Resources aus dem SDK-Generator) ist in der Messung ausgenommen. Der Service Provider wird mit [Orchestra Testbench](https://packages.tools/testbench) (Laravel-Paket-Tests) geprüft; dafür ist `orchestra/testbench` als Dev-Abhängigkeit eingetragen (Laravel 11, PHP 8.2+).
+
+## CI
+
+Bei **Push oder Merge in `main`** (sowie bei Pull Requests gegen `main`) laufen automatisch:
+
+- **Tests** (GitHub Actions, siehe Badge oben)
+- **Code-Coverage** → Upload an [Codecov](https://codecov.io); Anzeige als Badge und im GitHub-PR
+
+Falls dein GitHub-Repository einen anderen Pfad hat als `webkult/plentyone-saloon-api`, die Badge-URLs in diesem README anpassen. Codecov fügt öffentliche Repos beim ersten Upload automatisch hinzu.

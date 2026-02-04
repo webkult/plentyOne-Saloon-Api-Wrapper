@@ -4,12 +4,33 @@
          bootstrap="vendor/autoload.php"
          colors="true"
 >
+    <source>
+        <include>
+            <directory>src</directory>
+        </include>
+        <exclude>
+            <directory>vendor</directory>
+            <directory>src/Requests</directory>
+            <directory>src/Dto</directory>
+            <directory>src/Resource</directory>
+            <file>src/BaseResource.php</file>
+        </exclude>
+    </source>
+    <coverage>
+        <report>
+            <clover outputFile="build/coverage/clover.xml"/>
+            <text outputFile="php://stdout" showUncoveredFiles="true"/>
+        </report>
+    </coverage>
     <testsuites>
         <testsuite name="Unit">
             <directory>tests/Unit</directory>
         </testsuite>
         <testsuite name="Feature">
             <directory>tests/Feature</directory>
+        </testsuite>
+        <testsuite name="Laravel">
+            <directory>tests/Laravel</directory>
         </testsuite>
     </testsuites>
 </phpunit>
